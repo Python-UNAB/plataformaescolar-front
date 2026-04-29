@@ -10,7 +10,6 @@ import {
   Loading,
   EmptyState,
   PageHeader,
-  Breadcrumbs,
   Modal,
   ConfirmDialog,
 } from "../../components";
@@ -108,7 +107,7 @@ export function CourseDetail() {
   };
 
   if (isLoading) {
-    return <Loading size="lg" text="Cargando curso..." />;
+    return <Loading size="lg" message="Cargando curso..." />;
   }
 
   if (error || !course) {
@@ -136,14 +135,11 @@ export function CourseDetail() {
         title={`Curso ${course.nombre}`}
         icon={GraduationCap}
         subtitle={`Año ${course.anio} - Turno ${turnoLabels[course.turno]}`}
-      >
-        <Breadcrumbs
-          items={[
-            { label: "Cursos", href: "/cursos", icon: GraduationCap },
-            { label: course.nombre },
-          ]}
-        />
-      </PageHeader>
+        breadcrumbs={[
+          { label: "Cursos", href: "/cursos" },
+          { label: course.nombre },
+        ]}
+      />
 
       <div className="grid grid-cols-2 mb-4">
         <Card>
@@ -168,7 +164,7 @@ export function CourseDetail() {
             {course.materias.length === 0 ? (
               <EmptyState
                 icon={BookOpen}
-                title="Sin materias"
+                message="Sin materias"
                 description="No hay materias registradas"
               />
             ) : (
@@ -244,7 +240,7 @@ export function CourseDetail() {
             {course.inscripciones.length === 0 ? (
               <EmptyState
                 icon={Users}
-                title="Sin alumnos"
+                message="Sin alumnos"
                 description="No hay alumnos inscriptos"
               />
             ) : (

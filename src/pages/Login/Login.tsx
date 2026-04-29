@@ -1,4 +1,4 @@
-import { useState, FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { Button, Alert, Card } from "../../components";
@@ -98,7 +98,8 @@ export function Login() {
               size="lg"
               isLoading={isLoading}
               className="login-btn"
-              leftIcon={<LogIn size={18} />}
+              icon={LogIn}
+              iconPosition="left"
             >
               Ingresar
             </Button>

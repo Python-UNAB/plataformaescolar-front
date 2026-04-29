@@ -8,7 +8,6 @@ import {
   Loading,
   EmptyState,
   PageHeader,
-  Breadcrumbs,
   Modal,
   ConfirmDialog,
 } from "../../components";
@@ -17,7 +16,7 @@ import type {
   TeacherSubject,
   SubjectStudentData,
 } from "../../services/grade.service";
-import type { Periodo, CreateGradeDto } from "../../types";
+import type { Periodo } from "../../types";
 import "./TeacherSubjects.css";
 
 const periodos: Periodo[] = [
@@ -55,7 +54,7 @@ export function TeacherSubjects() {
   }, []);
 
   if (isLoading) {
-    return <Loading size="lg" text="Cargando materias..." />;
+    return <Loading size="lg" message="Cargando materias..." />;
   }
 
   if (error) {
@@ -71,7 +70,7 @@ export function TeacherSubjects() {
           <Card.Body>
             <EmptyState
               icon={Book}
-              title="Sin materias asignadas"
+              message="Sin materias asignadas"
               description="No tiene materias asignadas actualmente"
             />
           </Card.Body>
@@ -162,7 +161,7 @@ export function TeacherSubjectDetail() {
   };
 
   if (isLoading) {
-    return <Loading size="lg" text="Cargando datos..." />;
+    return <Loading size="lg" message="Cargando datos..." />;
   }
 
   if (error || !data) {
@@ -186,14 +185,11 @@ export function TeacherSubjectDetail() {
         title={data.materia.nombre}
         icon={Book}
         subtitle={`${data.curso.nombre} - Año ${data.curso.anio}`}
-      >
-        <Breadcrumbs
-          items={[
-            { label: "Mis Materias", href: "/mis-materias", icon: Book },
-            { label: data.materia.nombre },
-          ]}
-        />
-      </PageHeader>
+        breadcrumbs={[
+          { label: "Mis Materias", href: "/mis-materias" },
+          { label: data.materia.nombre },
+        ]}
+      />
 
       <Card>
         <Card.Header>
@@ -206,7 +202,7 @@ export function TeacherSubjectDetail() {
           {data.alumnos.length === 0 ? (
             <EmptyState
               icon={Users}
-              title="Sin alumnos"
+              message="Sin alumnos"
               description="No hay alumnos inscriptos en este curso"
             />
           ) : (

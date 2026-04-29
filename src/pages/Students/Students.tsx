@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { userService } from "../../services/user.service";
 import { enrollmentService } from "../../services/enrollment.service";
 import type { StudentHistory } from "../../services/enrollment.service";
-import type { User, Periodo } from "../../types";
+import type { User } from "../../types";
 import {
   PageHeader,
   Card,
@@ -185,7 +185,7 @@ export function StudentDetail() {
           title="Historial Académico"
           icon={UserIcon}
           breadcrumbs={[
-            { label: "Alumnos", href: "/alumnos", icon: Users },
+            { label: "Alumnos", href: "/alumnos" },
             { label: "Error" },
           ]}
         />
@@ -207,7 +207,7 @@ export function StudentDetail() {
         title="Historial Académico"
         icon={UserIcon}
         breadcrumbs={[
-          { label: "Alumnos", href: "/alumnos", icon: Users },
+          { label: "Alumnos", href: "/alumnos" },
           { label: `${history.alumno.nombre} ${history.alumno.apellido}` },
         ]}
       />
