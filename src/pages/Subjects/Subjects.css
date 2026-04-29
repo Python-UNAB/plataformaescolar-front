@@ -1,0 +1,13 @@
+.subjects-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mt-3 {
+  margin-top: var(--spacing-lg);
+}
+
+.text-muted {
+  color: var(--color-gray-400);
+  font-style: italic;
+}

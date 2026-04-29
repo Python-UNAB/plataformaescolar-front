@@ -1,0 +1,302 @@
+/* DataTable - MUI DataGrid wrapper styles */
+.data-table {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Main container */
+.data-table .MuiDataGrid-root {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  border: none;
+  border-radius: var(--radius-md);
+}
+
+/* Column headers */
+.data-table .MuiDataGrid-columnHeaders {
+  background: linear-gradient(
+    180deg,
+    var(--color-gray-50) 0%,
+    var(--color-gray-100) 100%
+  );
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.data-table .MuiDataGrid-columnHeader {
+  padding: 0 var(--spacing-md);
+  outline: none !important;
+  transition: background-color var(--transition-fast);
+}
+
+.data-table .MuiDataGrid-columnHeader:hover {
+  background-color: var(--color-gray-200);
+}
+
+.data-table .MuiDataGrid-columnHeader:focus,
+.data-table .MuiDataGrid-columnHeader:focus-within {
+  outline: none !important;
+}
+
+.data-table .MuiDataGrid-columnHeaderTitle {
+  font-weight: 600;
+  color: var(--color-gray-700);
+  text-transform: uppercase;
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.05em;
+}
+
+.data-table .MuiDataGrid-columnSeparator {
+  display: none;
+}
+
+/* Sort icons */
+.data-table .MuiDataGrid-sortIcon {
+  color: var(--color-gray-400);
+  opacity: 0.5;
+  transition:
+    opacity var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.data-table .MuiDataGrid-columnHeader:hover .MuiDataGrid-sortIcon {
+  opacity: 1;
+  color: var(--color-gray-500);
+}
+
+.data-table .MuiDataGrid-columnHeader--sorted .MuiDataGrid-sortIcon {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+.data-table .MuiDataGrid-iconButtonContainer {
+  visibility: visible;
+  width: auto;
+}
+
+/* Data cells */
+.data-table .MuiDataGrid-cell {
+  padding: 0 var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray-100);
+  color: var(--color-gray-900);
+  display: flex;
+  align-items: center;
+  transition: background-color var(--transition-fast);
+}
+
+.data-table .MuiDataGrid-cell:focus,
+.data-table .MuiDataGrid-cell:focus-within {
+  outline: none !important;
+}
+
+/* Row styling */
+.data-table .MuiDataGrid-row {
+  transition: background-color var(--transition-fast);
+}
+
+.data-table .MuiDataGrid-row:hover {
+  background-color: var(--color-gray-50);
+}
+
+.data-table .MuiDataGrid-row.Mui-selected {
+  background-color: var(--color-primary-light);
+}
+
+.data-table .MuiDataGrid-row.Mui-selected:hover {
+  background-color: var(--color-primary-light);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Striped Rows Modifier
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.data-table--striped .MuiDataGrid-row:nth-of-type(even) {
+  background-color: var(--color-gray-50);
+}
+
+.data-table--striped .MuiDataGrid-row:nth-of-type(even):hover {
+  background-color: var(--color-gray-100);
+}
+
+.data-table--striped .MuiDataGrid-row:nth-of-type(odd):hover {
+  background-color: var(--color-gray-50);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Compact Mode Modifier
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.data-table--compact .MuiDataGrid-columnHeader {
+  padding: 0 var(--spacing-sm);
+}
+
+.data-table--compact .MuiDataGrid-cell {
+  padding: 0 var(--spacing-sm);
+}
+
+.data-table--compact .MuiDataGrid-row {
+  min-height: 40px !important;
+}
+
+.data-table--compact .MuiDataGrid-cell {
+  min-height: 40px !important;
+}
+
+/* Clickable rows */
+.data-table .MuiDataGrid-row--clickable {
+  cursor: pointer;
+}
+
+/* Checkbox styling */
+.data-table .MuiCheckbox-root {
+  color: var(--color-gray-400);
+  transition: color var(--transition-fast);
+}
+
+.data-table .MuiCheckbox-root.Mui-checked {
+  color: var(--color-primary);
+}
+
+.data-table .MuiCheckbox-root:hover {
+  background-color: var(--color-primary-light);
+}
+
+/* Footer / Pagination */
+.data-table .MuiDataGrid-footerContainer {
+  border-top: 1px solid var(--color-gray-200);
+  background: linear-gradient(
+    0deg,
+    var(--color-gray-50) 0%,
+    var(--color-gray-100) 100%
+  );
+  min-height: 52px;
+}
+
+.data-table .MuiTablePagination-root {
+  color: var(--color-gray-600);
+  font-size: var(--font-size-sm);
+}
+
+.data-table .MuiTablePagination-selectLabel,
+.data-table .MuiTablePagination-displayedRows {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+
+.data-table .MuiTablePagination-select {
+  font-size: var(--font-size-sm);
+}
+
+.data-table .MuiIconButton-root {
+  color: var(--color-gray-600);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.data-table .MuiIconButton-root:hover {
+  background-color: var(--color-gray-200);
+  color: var(--color-gray-800);
+}
+
+.data-table .MuiIconButton-root.Mui-disabled {
+  color: var(--color-gray-300);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Loading Overlay
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.data-table__loading-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Empty State Overlay
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.data-table__empty-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  padding: var(--spacing-xl);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Table Actions Helper
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.table-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.table-actions .btn {
+  padding: var(--spacing-xs);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Chip/Badge in Table Cells
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.data-table .MuiDataGrid-cell .badge {
+  max-height: 30px;
+  padding: 6px 8px;
+  font-size: 11px;
+  line-height: 1;
+}
+
+/* Empty state overlay */
+.data-table__empty-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 200px;
+  padding: var(--spacing-xl);
+}
+
+/* Virtual scroller */
+.data-table .MuiDataGrid-virtualScroller {
+  min-height: 100px;
+}
+
+/* Remove default MUI focus outline */
+.data-table .MuiDataGrid-root:focus,
+.data-table .MuiDataGrid-root:focus-visible {
+  outline: none;
+}
+
+/* Fix for action buttons inside cells */
+.data-table .MuiDataGrid-cell .btn,
+.data-table .MuiDataGrid-cell button {
+  font-size: var(--font-size-xs);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .data-table .MuiDataGrid-columnHeaderTitle {
+    font-size: 0.65rem;
+  }
+
+  .data-table .MuiDataGrid-cell {
+    font-size: var(--font-size-xs);
+    padding: 0 var(--spacing-sm);
+  }
+
+  .data-table .MuiDataGrid-columnHeader {
+    padding: 0 var(--spacing-sm);
+  }
+}

@@ -1,0 +1,45 @@
+.students-page,
+.student-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.student-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.grade-badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+}
+
+.grade-badge.aprobado {
+  background-color: var(--color-success-bg, #dcfce7);
+  color: var(--color-success-text, #166534);
+}
+
+.grade-badge.desaprobado {
+  background-color: var(--color-danger-bg, #fee2e2);
+  color: var(--color-danger-text, #991b1b);
+}
+
+.ml-2 {
+  margin-left: var(--spacing-sm);
+}
+
+.mt-3 {
+  margin-top: var(--spacing-md);
+}
+
+.mb-3 {
+  margin-bottom: var(--spacing-md);
+}
+
+.mb-4 {
+  margin-bottom: var(--spacing-lg);
+}

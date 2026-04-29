@@ -1,0 +1,48 @@
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  color: var(--color-gray-500);
+}
+
+/* Full page mode - centers vertically with overlay */
+.loading--full-page {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-gray-50);
+  z-index: 9999;
+}
+
+/* Overlay mode - semi-transparent background */
+.loading--overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 10;
+}
+
+/* Spinner - Lucide Loader2 icon with spin animation */
+.loading__spinner {
+  color: var(--color-primary);
+  animation: loading-spin 1s linear infinite;
+}
+
+/* Text */
+.loading__text {
+  margin: var(--spacing-md) 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+}
+
+.loading--sm .loading__text {
+  font-size: var(--font-size-xs);
+  margin-top: var(--spacing-sm);
+}
+
+@keyframes loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,9 @@
+@import "./styles/global.css";
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,232 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.title__home {
+  color: var(--color-primary-light);
+}
+
+.header {
+  background-color: var(--color-primary);
+  color: var(--color-gray-50);
+  padding: var(--spacing-md) var(--spacing-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.header-brand__icon {
+  flex-shrink: 0;
+}
+
+.header-brand h1 {
+  margin: 0;
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.user-info__icon {
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+
+.user-info__name {
+  font-weight: 500;
+}
+
+.user-role {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+
+.btn-logout {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: var(--color-gray-50);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast, 150ms) ease;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.btn-logout:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--color-gray-50);
+  transform: translateY(-1px);
+}
+
+.btn-logout:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+.btn-logout:active {
+  transform: translateY(0);
+}
+
+.layout-body {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--color-gray-50);
+  border-right: 1px solid var(--color-gray-200);
+  padding: var(--spacing-md) 0;
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  color: var(--color-gray-700);
+  text-decoration: none;
+  transition: all var(--transition-fast, 150ms) ease;
+  border-left: 3px solid transparent;
+}
+
+.nav-link__icon {
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast, 150ms) ease;
+}
+
+.nav-link__label {
+  text-decoration: none;
+  flex: 1;
+}
+
+.nav-link:hover {
+  background-color: var(--color-gray-100);
+  color: var(--color-primary);
+}
+
+.nav-link:hover .nav-link__icon {
+  opacity: 1;
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.nav-link.active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  border-left-color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-link.active:hover {
+  text-decoration: none;
+}
+
+.nav-link.active .nav-link__icon {
+  opacity: 1;
+}
+
+.main-content {
+  flex: 1;
+  padding: var(--spacing-xl);
+  background-color: var(--color-gray-100);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: var(--spacing-md);
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .header-brand h1 {
+    font-size: var(--font-size-xl);
+  }
+
+  .layout-body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid var(--color-gray-200);
+    padding: 0.5rem 0;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    padding: 0 var(--spacing-sm);
+  }
+
+  .nav-link {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-left: none;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+  }
+
+  .nav-link__icon {
+    display: none;
+  }
+
+  .nav-link.active {
+    border-left: none;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+}
