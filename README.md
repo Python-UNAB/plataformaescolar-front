@@ -1,6 +1,5 @@
 # Plataforma Escolar — Frontend
 
-Interfaz web de la Plataforma Escolar, un sistema de gestión institucional que permite administrar usuarios, cursos, materias, inscripciones y calificaciones según el rol de cada actor educativo.
 
 ---
 
